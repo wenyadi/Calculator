@@ -1,0 +1,30 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for Hello World example
+ */
+
+grammar calculator;
+
+public <calculator> = <operation>| <sixNumber> | <zeroDigit> | <other> | <equal> ;
+
+/*<greet> = Good morning | Hello | Bye | Welcome ;
+ *<name> = Mike | Bhiksha | Evandro | Paul | Philip | Rita | Will ;
+ */
+
+<other> = cancel | delete | please quit | clear ;
+<calculate> = <sixNumber> | <operation> | <operation> <sixNumber> | <sixNumber> <operation> ;
+
+<operation> = plus | minus | subtract | negative | times | multiply | power of | left parentheses | open parentheses | right parentheses | close parentheses ;
+<equal> = equal ;
+
+<number> = <digit> | <tenDigit> | <twentyDigit> | <twentyDigit> <digit> ; //1-99
+<threeNumber> = <digit> <hundred> <number> | <number> ; //100-999
+<sixNumber> = <threeNumber> <thousand> <threeNumber> | <threeNumber> ; //1000-999,999
+
+<zeroDigit> = oh | zero | one | two | three | four | five | six | seven | eight | nine ;
+<digit> = one | two | three | four | five | six | seven | eight | nine ;
+<tenDigit> = ten | eleven | twelve | thirteen | fourteen | fifteen | sixteen | seventeen | eighteen | nineteen ;
+<twentyDigit> = twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety ;
+<hundred> = hundred ;
+<thousand> = thousand ;
